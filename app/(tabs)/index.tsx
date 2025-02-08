@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import { type ImageSource } from "expo-image";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import ImageViewer from "@/components/ImageViewer";
 import Button from "@/components/Button";
@@ -55,7 +56,7 @@ export default function Index() {
   const onSaveImageAsync = async () => {};
 
   return (
-    <View style={styles.container}>
+    <GestureHandlerRootView style={styles.container}>
       <View style={styles.imageContainer}>
         <ImageViewer
           imgSource={selectedImage ? { uri: selectedImage } : PlaceHolderImage}
@@ -94,7 +95,7 @@ export default function Index() {
       <EmojiPicker onClose={onCloseModal} isVisible={isModalVisible}>
         <EmojiList onSelect={selectEmoji} />
       </EmojiPicker>
-    </View>
+    </GestureHandlerRootView>
   );
 }
 
